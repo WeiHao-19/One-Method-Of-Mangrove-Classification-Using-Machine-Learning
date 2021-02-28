@@ -1,20 +1,9 @@
-site_name: E4E Mangrove Monitoring 
+site_name: One-Method-Of-Mangrove-Classification-Using-Machine-Learning
 
-theme: sandstone
+theme: Perceptron and Logistic regression
 
 
 nav:
-    - Home: 'index.md'
-    - 'About.md'
-    - ML: 
-        - CNN: 'CNN.md'
-        - UNet: 'UNet.md'
-        - Semi-Supervised: 'Semi-Supervised.md'
-    - Tools: 
-        - Labeling Tool: 'Labeling Tool.md'
-        - Image Classification Tool: 'Image Classification Tool.md'
-        - GIS Utils: 'GIS Utils.md'
-        - Azure Slack Bot: 'Azure Slackbot.md'
-    - Other: 
-        - 'Misc.md'
-        - 'Papers.md'
+    Logistic regression is a discriminant model which learns the probability of belonging to each category under given characteristic conditions, namely p(y∣x)p(y∣x).
+    The generative model learns the joint probability of features and categories namely p(x,y)p(x,y).
+
