@@ -1,0 +1,28 @@
+load data;
+X = [ones(size(train_feature,1),1) train_feature]; %增加一列1，表示增广的特征
+n = size(X,2); %特征数+1
+m = size(X,1); %样本数
+Y = train_label; %真实类别
+W = zeros(n,1);  %增广的权重向量，初始全为0
+alpha = 1;   %学习率
+count = 0;  %连续正确分类的样本记数
+converge = 0; %是否已经收敛
+while converge == 0
+    for i=1:m
+        % 当前训练样本分类错误，更新参数
+        if Y(i)*(W'*X(i,:)') <= 0
+            W = W + alpha*Y(i)*X(i,:)';
+            count = 0;
+        else
+            count = count + 1;
+            if count == m
+                converge = 1;
+                break;
+            end;
+        end;
+    end;
+end;
+% 测试样本的特征也增加一列1
+test_feature = [ones(size(test_feature,1),1) test_feature];
+% 进行预测
+predict = sign(W'*test_feature')';
